@@ -172,6 +172,7 @@ describe(@"Object Operators", ^{
     });
 });
 
+#pragma mark Array and set operators
 describe(@"Array and set operators", ^{
     NSArray *listOfTransactionList = [NSArray arrayWithObjects:transactions, transactions, nil];
     
