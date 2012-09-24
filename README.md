@@ -1,4 +1,4 @@
-a-dip-in-objective-c
+A Dip in Objective-C
 ====================
 
-learning Objective C
+Objective-C Learning
