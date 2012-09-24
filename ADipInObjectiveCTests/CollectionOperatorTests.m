@@ -58,13 +58,27 @@ describe(@"Simple Collection Operators", ^{
         
         double sum = 0;
         for (Transaction *transaction in transactions) {
-            sum += [transaction.amount intValue];
+            sum += [transaction.amount doubleValue];
         }
         NSNumber *avg1 = [NSNumber numberWithDouble:(sum / [transactions count])];
         [[avg1 should] equal:expected withDelta:0.01];
 
         NSNumber *avg2 = [transactions valueForKeyPath:@"@avg.amount"];
         [[avg2 should] equal:expected withDelta:0.01];
+    });
+    
+    it(@"calculates sum", ^{
+        double expected = 1465;
+        
+        double sum = 0;
+        for (Transaction *transaction in transactions) {
+            sum += [transaction.amount doubleValue];
+        }
+        NSNumber *sum1 = [NSNumber numberWithDouble:sum];
+        [[sum1 should] equal:expected withDelta:0.01];
+        
+        NSNumber *sum2 = [transactions valueForKeyPath:@"@sum.amount"];
+        [[sum2 should] equal:expected withDelta:0.01];
     });
     
     it(@"counts collection", ^{
